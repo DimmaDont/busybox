@@ -13,6 +13,8 @@ Config.in
 # Never ignore these
 #
 !.gitignore
+!.github
+!.github/**/.config*
 
 #
 # Normal output
@@ -20,6 +22,7 @@ Config.in
 /busybox
 /busybox_old
 /busybox_unstripped*
+/bin
 
 #
 # Backups / patches
