@@ -24,12 +24,12 @@ jobs:
       - name: Create output directory
         run: mkdir bin
 
-      - name: Copy sha256sum config
+      - name: Copy sha512sum config
         run: cp ./.github/workflows/.config_shaonly ./.config
-      - name: Make sha256sum
+      - name: Make sha512sum
         run: make
-      - name: Move and rename sha256sum
-        run: mv busybox bin/sha256sum
+      - name: Move and rename sha512sum
+        run: mv busybox bin/sha512sum
 
       - name: Copy busybox config
         run: cp ./.github/workflows/.config_full ./.config
@@ -52,7 +52,7 @@ jobs:
       - name: Draft Release
         uses: softprops/action-gh-release@v2
         with:
-          files: bin/busybox, bin/sha256sum
+          files: bin/busybox, bin/sha512sum
           tag_name: ${{ inputs.tag_name }}
           draft: true
       - name: Publish Release
